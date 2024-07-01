@@ -2,11 +2,13 @@ import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
+import { GlobalStyles } from "./constants/styles";
 
 import HomeScreen from "./screens/HomeScreen";
 import ArticlesScreen from "./screens/ArticlesScreen";
 import TopicsScreen from "./screens/TopicsScreen";
 import UserScreen from "./screens/UserScreen";
+
 import UserContextProvider from "./context/user-context";
 
 const BottomTab = createBottomTabNavigator();
@@ -19,10 +21,11 @@ export default function App() {
         <NavigationContainer>
           <BottomTab.Navigator
             screenOptions={{
-              headerStyle: { backgroundColor: "#3c0a6b" },
+              headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
               headerTintColor: "white",
-              tabBarActiveTintColor: "#3c0a6b",
               headerTitleAlign: "center", // for Android - iOS is fixed at centre
+              //tabBarStyle: { backgroundColor: GlobalStyles.colors.primary500 },
+              tabBarActiveTintColor: GlobalStyles.colors.primary500,
             }}
           >
             <BottomTab.Screen
@@ -56,7 +59,7 @@ export default function App() {
               }}
             />
             <BottomTab.Screen
-              name="Sign in/out"
+              name="User"
               component={UserScreen}
               options={{
                 title: "Sign in/out",
