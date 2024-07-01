@@ -4,17 +4,18 @@ import { useContext } from "react";
 import { UserContext } from "../context/user-context";
 
 function HomeScreen() {
-  const userCtx = useContext(UserContext);
+  const { user, setUser, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
 
   function changeUser() {
-    userCtx.updateUser("George");
+    setUser("George");
+    setIsLoggedIn(true);
   }
 
   return (
     <View style={styles.rootContainer}>
       <Text>
         This is the <Text style={styles.highlight}>"Home"</Text> screen for{" "}
-        {userCtx.user}
+        {user}, Logged-in: {isLoggedIn ? "true" : "false"}
       </Text>
       <Button title="Update user" onPress={changeUser} />
     </View>

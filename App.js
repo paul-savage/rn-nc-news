@@ -22,7 +22,7 @@ export default function App() {
               headerStyle: { backgroundColor: "#3c0a6b" },
               headerTintColor: "white",
               tabBarActiveTintColor: "#3c0a6b",
-              headerTitleAlign: "center",
+              headerTitleAlign: "center", // for Android - iOS is fixed at centre
             }}
           >
             <BottomTab.Screen
