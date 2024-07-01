@@ -3,21 +3,20 @@ import { useContext } from "react";
 
 import { UserContext } from "../context/user-context";
 
-function HomeScreen() {
-  const { user, setUser, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
-
-  function changeUser() {
-    setUser("George");
-    setIsLoggedIn(true);
-  }
-
+function HomeScreen({ navigation }) {
   return (
     <View style={styles.rootContainer}>
-      <Text>
-        This is the <Text style={styles.highlight}>"Home"</Text> screen for{" "}
-        {user}, Logged-in: {isLoggedIn ? "true" : "false"}
-      </Text>
-      <Button title="Update user" onPress={changeUser} />
+      <View>
+        <Text>Display all articles</Text>
+        <Button
+          title="Articles"
+          onPress={() => navigation.navigate("Articles")}
+        />
+      </View>
+      <View>
+        <Text>Display all topics</Text>
+        <Button title="Topics" onPress={() => navigation.navigate("Topics")} />
+      </View>
     </View>
   );
 }
@@ -29,9 +28,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  },
-  highlight: {
-    fontWeight: "bold",
-    color: "#eb1064",
   },
 });

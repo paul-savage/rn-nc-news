@@ -16,7 +16,7 @@ const BottomTab = createBottomTabNavigator();
 export default function App() {
   return (
     <>
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
       <UserContextProvider>
         <NavigationContainer>
           <BottomTab.Navigator
@@ -32,7 +32,8 @@ export default function App() {
               name="Home"
               component={HomeScreen}
               options={{
-                title: "Home",
+                //title: "Home",
+                headerShown: false,
                 tabBarIcon: ({ color, size }) => (
                   <Ionicons name="home" color={color} size={size} />
                 ),
@@ -42,7 +43,8 @@ export default function App() {
               name="Articles"
               component={ArticlesScreen}
               options={{
-                title: "Articles",
+                //title: "Articles",
+                headerShown: false,
                 tabBarIcon: ({ color, size }) => (
                   <Ionicons name="albums" color={color} size={size} />
                 ),
@@ -52,7 +54,8 @@ export default function App() {
               name="Topics"
               component={TopicsScreen}
               options={{
-                title: "Topics",
+                //title: "Topics",
+                headerShown: false,
                 tabBarIcon: ({ color, size }) => (
                   <Ionicons name="book" color={color} size={size} />
                 ),
@@ -62,7 +65,8 @@ export default function App() {
               name="User"
               component={UserScreen}
               options={{
-                title: "Sign in/out",
+                //title: "Sign in/out",
+                headerShown: false,
                 tabBarIcon: ({ color, size }) => (
                   <Ionicons name="person" color={color} size={size} />
                 ),
