@@ -1,7 +1,4 @@
 import { View, Text, Button, StyleSheet } from "react-native";
-import { useContext } from "react";
-
-import { UserContext } from "../context/user-context";
 
 function HomeScreen({ navigation }) {
   return (
@@ -10,7 +7,7 @@ function HomeScreen({ navigation }) {
         <Text>Display all articles</Text>
         <Button
           title="Articles"
-          onPress={() => navigation.navigate("Articles")}
+          onPress={() => navigation.navigate("Articles", { topic: "cooking" })}
         />
       </View>
       <View>
