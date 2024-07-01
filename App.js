@@ -22,12 +22,14 @@ export default function App() {
               headerStyle: { backgroundColor: "#3c0a6b" },
               headerTintColor: "white",
               tabBarActiveTintColor: "#3c0a6b",
+              headerTitleAlign: "center",
             }}
           >
             <BottomTab.Screen
               name="Home"
               component={HomeScreen}
               options={{
+                title: "Home",
                 tabBarIcon: ({ color, size }) => (
                   <Ionicons name="home" color={color} size={size} />
                 ),
@@ -37,6 +39,7 @@ export default function App() {
               name="Articles"
               component={ArticlesScreen}
               options={{
+                title: "Articles",
                 tabBarIcon: ({ color, size }) => (
                   <Ionicons name="albums" color={color} size={size} />
                 ),
@@ -46,6 +49,7 @@ export default function App() {
               name="Topics"
               component={TopicsScreen}
               options={{
+                title: "Topics",
                 tabBarIcon: ({ color, size }) => (
                   <Ionicons name="book" color={color} size={size} />
                 ),
@@ -55,6 +59,7 @@ export default function App() {
               name="Sign in/out"
               component={UserScreen}
               options={{
+                title: "Sign in/out",
                 tabBarIcon: ({ color, size }) => (
                   <Ionicons name="person" color={color} size={size} />
                 ),

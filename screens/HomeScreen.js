@@ -13,8 +13,8 @@ function HomeScreen() {
   return (
     <View style={styles.rootContainer}>
       <Text>
-        This is the <Text style={styles.highlight}>"Home: {userCtx.user}"</Text>{" "}
-        screen!
+        This is the <Text style={styles.highlight}>"Home"</Text> screen for{" "}
+        {userCtx.user}
       </Text>
       <Button title="Update user" onPress={changeUser} />
     </View>
